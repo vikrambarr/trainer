@@ -7,6 +7,27 @@ import shutil
 pygame.init()
 clock = pygame.time.Clock()
 
+type_colors = {
+	"normal": (224, 224, 214), 
+	"fighting": (231, 211, 209), 
+	"ghost": (219, 215, 228), 
+	"bug": (234, 235, 211), 
+	"dark": (226, 220, 215), 
+	"psychic": (231, 215, 220), 
+	"fairy": (232, 212, 231), 
+	"flying": (218, 215, 227), 
+	"fire": (234, 222, 213), 
+	"water": (212, 217, 230), 
+	"grass": (223, 233, 217), 
+	"ground": (232, 228, 217), 
+	"poison": (227, 211, 229), 
+	"steel": (220, 220, 223), 
+	"rock": (230, 226, 208), 
+	"ice": (222, 229, 229), 
+	"electric": (235, 230, 211), 
+	"dragon": (212, 206, 231)
+}
+
 winsize = (380, 720)
 screen = pygame.display.set_mode(winsize)
 
