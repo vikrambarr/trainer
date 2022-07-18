@@ -6,11 +6,10 @@ sugar = requests.session()
 print("\nBeginning download.")
 
 # Get ranked list of mons from pikalytics api
-list_of_mons = sugar.get("https://www.pikalytics.com/api/l/2022-05/gen8nationaldexag-1760").json()
+list_of_mons = sugar.get("https://www.pikalytics.com/api/l/2022-06/gen8nationaldexag-1760").json()
 num_mons = len(list_of_mons)
 
 mon_info = {}
-to_remove = []
 
 # For every mon on the ranked list, grab its complete info set, including mons without one
 for pos, mon in enumerate(list_of_mons):
@@ -20,7 +19,7 @@ for pos, mon in enumerate(list_of_mons):
     print("\r", end = "")
     print("(" + str(pos+1) + " "*(4-len(str(pos+1))) + "/" + str(num_mons) + ")  " + "█"*progress + "_"*(40-progress) + "  " + mon["name"] + " "*10, end = "")
     
-    new_mon = sugar.get("https://www.pikalytics.com/api/p/2022-05/gen8nationaldexag-1760/" + mon["name"])
+    new_mon = sugar.get("https://www.pikalytics.com/api/p/2022-06/gen8nationaldexag-1760/" + mon["name"])
     
     try:
         _name = new_mon.json()['name']
